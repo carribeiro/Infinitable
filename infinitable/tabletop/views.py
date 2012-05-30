@@ -1,7 +1,9 @@
 # coding: utf-8
 
-from django.shortcut import render_to_response
+from django.shortcuts import render_to_response
 from django.http import Http404
+from tabletop.models import Panel
+
 
 def index(request):
     try:
