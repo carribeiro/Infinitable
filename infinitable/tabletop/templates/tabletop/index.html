@@ -1,8 +1,9 @@
+{% extends "base.html" %}
 {% block content %}
-<div>
+<div class="panel" id="base">
 {{ top_panel.tag }}
 {% for subpanel in top_panel.panel_set.all %}
-  <div>
+  <div class="panel">
   {{ subpanel.tag }}
   </div>
 {% endfor %}
