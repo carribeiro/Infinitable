@@ -7,7 +7,7 @@ from tabletop.models import Panel
 
 def index(request):
     try:
-        top_panel = Panel.objects.get(tag='index')
+        top_panel = Panel.objects.get(tag='base')
     except Panel.DoesNotExist:
         raise Http404
     return render_to_response('tabletop/index.html', {'top_panel': top_panel})
