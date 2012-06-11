@@ -1,0 +1,95 @@
+<style type="text/css">
+/* tip from http://www.tutwow.com/htmlcss/quick-tip-css-100-height/
+   the html & body at 100% make the base panel respect the height parameter that we supply.
+    it may not be necessary but I'll leave it here just in case
+*/
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.panel {
+    margin: 5px;
+    float: left;
+    border: 1px solid;
+    min-height: 50px;
+    min-width: 100px;
+    position: relative;
+    z-index: 10;
+}
+
+#base {
+    float: none;
+    padding: 2px;
+    margin: 0.5%;
+    width: 98%;
+    height: 50%;
+    overflow: hidden; /* tip from http://matthewjamestaylor.com/blog/equal-height-columns-cross-browser-css-no-hacks */
+    position: relative;
+    z-index: 1;
+}
+
+.panel .tag {
+   position: absolute; 
+   z-index: 10;
+   font-size: 7pt;
+}
+
+.display {
+    position: absolute;
+    margin: 5px;
+    float: left;
+    border: 1px dotted;
+    min-height: 100px;
+    min-width: 98px;
+    z-index: 20;
+    background-color: white;
+}
+
+</style>
+<div class="tag">!!!</div>
+<div class="panel" id="base"> <div class="tag">a</div>
+  <div class="panel"> <div class="tag">b</div>
+  </div>
+  <div class="panel"> <div class="tag">c</div>
+    <div class="panel"> <div class="tag">c1</div>
+      <div class="display"; style="float:none; z-index:100; top:10px"> <div class="tag">d1</div>
+      </div>
+      <div class="display"; style="float:none; z-index:101; top:20px"> <div class="tag">d2</div>
+      </div>
+      <div class="display"; style="float:none; z-index:102; top:30px"> <div class="tag">d3</div>
+      </div>
+      <div class="display"; style="float:none; z-index:103; top:40px"> <div class="tag">d4</div>
+      </div>
+    </div>
+    <div class="panel"; style="overflow:hidden"> <div class="tag">c2</div>
+      <div class="panel" style="float:none; border-color:red; min-height:10px">
+        <div class="display"; style="margin:0px"> <div class="tag">e1</div>
+        </div>
+      </div>
+      <div class="panel" style="float:none; border-color:red; min-height:10px">
+        <div class="display"; style="margin:0px"> <div class="tag">e2</div>
+        </div>
+      </div>
+      <div class="panel" style="float:none; border-color:red; min-height:10px">
+        <div class="display"; style="margin:0px"> <div class="tag">e3</div>
+        </div>
+      </div>
+      <div class="panel" style="float:none; border-color:red; min-height:10px">
+        <div class="display"; style="margin:0px"> <div class="tag">e4</div>
+        </div>
+      </div>
+      <div class="panel" style="float:none; border-color:red; min-height:10px">
+        <div class="display"; style="margin:0px"> <div class="tag">e5</div>
+        </div>
+      </div>
+      <div style="min-height:90px">
+      </div>
+    </div>
+  </div>
+</div>
